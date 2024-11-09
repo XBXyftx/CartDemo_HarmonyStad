@@ -1,7 +1,7 @@
 // 列表项：
 import { CartGood, DEEP_GRAY, MAIN_RED } from '../data/GoodData'
 import PriceCom from './PriceCom'
-@Preview
+// @Preview
 @Component
 export default struct GoodsListItem {
   @ObjectLink item: CartGood//第二层所以要ObjectLink
