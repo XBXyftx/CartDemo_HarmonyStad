@@ -50,7 +50,7 @@ export default struct GoodsListItem {
 
             // 个数 Counter 内置组件
             Counter() {
-              Text('2')
+              Text(this.item.count.toString())
             }
             .scale({ x: .8, y: .8 })
             .onInc(()=>{
