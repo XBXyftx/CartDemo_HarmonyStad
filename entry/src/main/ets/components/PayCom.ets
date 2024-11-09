@@ -5,6 +5,8 @@ import PriceCom from './PriceCom'
 @Component
 export default struct PayCom {
   @Link selectedIds:string[]
+  @Prop totalPrice:number
+  @Prop totalNum:number
   build() {
     Row() {
       Row() {
@@ -26,9 +28,9 @@ export default struct PayCom {
           .fontSize(14)
         PriceCom({
           fontColor: Color.Black,
-          price: 0
+          price: this.totalPrice
         })
-        Button(`入会结算(0)`)
+        Button(`入会结算(${this.totalNum})`)
           .fontColor('#ffe3cc')
           .backgroundColor(Color.Black)
           .fontSize(14)

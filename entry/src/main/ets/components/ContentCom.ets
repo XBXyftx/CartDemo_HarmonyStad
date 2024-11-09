@@ -11,6 +11,9 @@ export default struct ContentCom {
   left() {
     Text('左侧测试')
   }
+  resetNums=()=>{
+
+  }
 
   @Builder
   righ(id: string) {
@@ -24,6 +27,7 @@ export default struct ContentCom {
       .onClick(() => {
         // this.list = []测试并证明Link的联动关系可以直接修改父组件的参数
         this.list = this.list.filter(item => item.id != id) //删除当前的本质是保留其他
+        this.resetNums()
       })
   }
 
