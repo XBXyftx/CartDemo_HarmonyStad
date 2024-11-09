@@ -4,6 +4,7 @@ import PriceCom from './PriceCom'
 
 @Component
 export default struct PayCom {
+  @Link selectedIds:string[]
   build() {
     Row() {
       Row() {
@@ -13,6 +14,7 @@ export default struct PayCom {
           .selectedColor(MAIN_RED)
           .onChange((event)=>{
             console.log('选中了'+JSON.stringify(event.name))
+            this.selectedIds = event.name
           })
 
         Text('全选')

@@ -9,6 +9,7 @@ import { LIGHT_GRAY } from '../data/GoodData'
 @Component
 export default struct Main {
   @State list: CartGood[] = goodList
+  @State selectedIds:string[]=[]
   build() {
     Column() {
       // 标题
@@ -20,7 +21,9 @@ export default struct Main {
         list:this.list
       })
       // 支付
-      PayCom()
+      PayCom({
+        selectedIds:this.selectedIds
+      })
     }
     .height('100%')
     .backgroundColor(LIGHT_GRAY)
