@@ -7,6 +7,7 @@ import ListTitleCom from './ListTitleCom'
 
 @Component
 export default struct ContentCom {
+  @Link list:CartGood[]//第一层可以用link
   build() {
     Scroll() {
       Column() {
@@ -18,9 +19,11 @@ export default struct ContentCom {
           ListTitleCom()
           // 自营区域
           List() {
-            ForEach(Array.from({ length: 3 }), (item: CartGood, index: number) => {
+            ForEach(this.list, (item: CartGood, index: number) => {
               ListItem() {
-                GoodsListItem()
+                GoodsListItem({
+                  item:item
+                })
               }
             })
           }

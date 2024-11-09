@@ -14,7 +14,9 @@ export default struct Main {
       // 标题
       TitleCom()
       // 内容
-      ContentCom()
+      ContentCom({
+        list:this.list
+      })
       // 支付
       PayCom()
     }

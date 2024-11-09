@@ -1,9 +1,10 @@
 // 列表项：
-import { DEEP_GRAY, MAIN_RED } from '../data/GoodData'
+import { CartGood, DEEP_GRAY, MAIN_RED } from '../data/GoodData'
 import PriceCom from './PriceCom'
 
 @Component
 export default struct GoodsListItem {
+  @ObjectLink item: CartGood//第二层所以要ObjectLink
   build() {
     Row({ space: 10 }) {
       // 左
