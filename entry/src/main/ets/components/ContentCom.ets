@@ -7,6 +7,18 @@ import ListTitleCom from './ListTitleCom'
 
 @Component
 export default struct ContentCom {
+  @Builder left(){
+    Text('左侧测试')
+  }
+  @Builder righ(){
+    Text('删除')
+      .fontSize(20)
+      .fontColor('#fff')
+      .backgroundColor(Color.Red)
+      .textAlign(TextAlign.Center)
+      .width(100)
+      .height('100%')
+  }
   @Link list:CartGood[]//第一层可以用link
   build() {
     Scroll() {
@@ -25,6 +37,10 @@ export default struct ContentCom {
                   item:item
                 })
               }
+              .swipeAction({
+                // start:this.left,
+                end:this.righ
+              })
             })
           }
           .divider({ strokeWidth: .5, startMargin: 10, endMargin: 10, color: DEEP_GRAY })
