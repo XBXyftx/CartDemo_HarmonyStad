@@ -32,8 +32,11 @@ export default struct ContentCom {
         .backgroundColor(Color.White)
         .margin({ left: 10, right: 10 })
 
-        // 空车 商品为空时显示
-        EmptyCom()
+        if (this.list.length===0){
+          // 空车 商品为空时显示
+          EmptyCom()
+        }
+
       }
     }
     .align(Alignment.Top)

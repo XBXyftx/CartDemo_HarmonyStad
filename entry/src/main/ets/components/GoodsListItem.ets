@@ -18,7 +18,7 @@ export default struct GoodsListItem {
       // 右
       Row({ space: 8 }) {
         // 商品图片
-        Image('https://m.360buyimg.com/mobilecms/s558x558_jfs/t1/188208/35/38739/41823/6515995cF15cdb08a/cf82ab82e3e36eb7.jpg!q50.jpg.webp')
+        Image(this.item.good.imageurl)
           .width(90)
           .padding(5)
           .border({ width: .5, color: DEEP_GRAY })
@@ -26,7 +26,7 @@ export default struct GoodsListItem {
         //   信息
         Column() {
           // 标题
-          Text('商品')
+          Text(this.item.good.wname)
             .maxLines(2)
             .textOverflow({ overflow: TextOverflow.Ellipsis })
             .fontSize(14)
@@ -39,10 +39,10 @@ export default struct GoodsListItem {
               Row() {
                 Image($r('app.media.ic_yhd_hyj'))
                   .width(35)
-                PriceCom({ price: 10.00 })
+                PriceCom({ price: this.item.good.jdPrice })
               }
 
-              PriceCom({ discard: true, fontColor: DEEP_GRAY, price: 19.00 })
+              PriceCom({ discard: true, fontColor: DEEP_GRAY, price: this.item.good.jdMainPrice })
             }
             .alignItems(HorizontalAlign.Start)
 
