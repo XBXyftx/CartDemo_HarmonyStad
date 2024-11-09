@@ -51,6 +51,7 @@ export default struct ContentCom {
                 end: this.righ(item.id)
               })
             }, (item: CartGood, index: number) => item.id) //将id设为唯一标识
+            //为了消除掉ForEach的唯一编码机制带来的影响，更改为用不变的id来取代动态数组编码加id的格式
           }
           .divider({
             strokeWidth: .5,
