@@ -1,20 +1,25 @@
+import ContentCom from '../components/ContentCom'
+import PayCom from '../components/PayCom'
+import TitleCom from '../components/TitleCom'
+import { CartGood, goodList } from '../data/GoodData'
+// 标题(显示商品种类)
+import { LIGHT_GRAY } from '../data/GoodData'
+
 @Entry
 @Component
-struct Index {
-  @State message: string = 'Hello World';
-
+export default struct Main {
+  @State list: CartGood[] = goodList
   build() {
-    RelativeContainer() {
-      Text(this.message)
-        .id('HelloWorld')
-        .fontSize(50)
-        .fontWeight(FontWeight.Bold)
-        .alignRules({
-          center: { anchor: '__container__', align: VerticalAlign.Center },
-          middle: { anchor: '__container__', align: HorizontalAlign.Center }
-        })
+    Column() {
+      // 标题
+      TitleCom()
+      // 内容
+      ContentCom()
+      // 支付
+      PayCom()
     }
     .height('100%')
-    .width('100%')
+    .backgroundColor(LIGHT_GRAY)
   }
 }
+
