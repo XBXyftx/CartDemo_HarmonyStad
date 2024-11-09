@@ -12,7 +12,9 @@ export default struct Main {
   build() {
     Column() {
       // 标题
-      TitleCom()
+      TitleCom({
+        length:this.list.length
+      })
       // 内容
       ContentCom({
         list:this.list

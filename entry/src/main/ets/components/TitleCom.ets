@@ -3,11 +3,12 @@ import { DEEP_GRAY, LIGHT_GRAY, MAIN_RED } from '../data/GoodData'
 
 @Component
 export default struct TitleCom {
+  @Prop length:number
   build() {
     Row() {
       // 文字
       Stack({ alignContent: Alignment.Bottom }) {
-        Text(`购物车(10 )`)
+        Text(`购物车(${this.length})`)
           .height('100%')
         Text('')
           .width(25)
