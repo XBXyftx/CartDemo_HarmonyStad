@@ -48,9 +48,12 @@ export default struct Main {
       // 内容
       ContentCom({
         list:this.list,
-        resetNums(){
-          this.sumHandler
-        }
+        selectedIds:this.selectedIds,
+        totalPrice:this.totalPrice,
+        totalNum:this.totalNum
+        // resetNums(){
+        //   this.sumHandler
+        // }
       })
       // 支付
       PayCom({

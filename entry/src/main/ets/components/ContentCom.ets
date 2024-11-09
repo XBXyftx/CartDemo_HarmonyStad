@@ -7,12 +7,35 @@ import ListTitleCom from './ListTitleCom'
 
 @Component
 export default struct ContentCom {
+  @Link selectedIds: string[]
+  @Link totalPrice: number
+  @Link totalNum: number
+
   @Builder
   left() {
     Text('左侧测试')
   }
-  resetNums=()=>{
 
+  resetNums = () => {
+    let totalPrice: number = 0 //总价
+    let totalNum: number = 0 //总数量
+    totalNum = this.list.reduce((a, b) => {
+      if (this.selectedIds.includes(b.id)) {
+        return a + b.count
+      } else {
+        return a
+      }
+    }, 0)
+    totalPrice = this.list.reduce((a, b) => {
+      if (this.selectedIds.includes(b.id)) {
+        return a + b.count * b.good.jdPrice
+      } else {
+        return a
+      }
+
+    }, 0)
+    this.totalPrice = totalPrice
+    this.totalNum = totalNum
   }
 
   @Builder
