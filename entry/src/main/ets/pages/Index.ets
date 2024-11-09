@@ -14,6 +14,7 @@ export default struct Main {
   @Provide totalNum:number = 0
 
   onPageShow(): void {
+    // setInterval(this.sumHandler,500)
     this.sumHandler()
   }
 
@@ -21,10 +22,19 @@ export default struct Main {
     let totalPrice:number = 0//总价
     let totalNum:number = 0//总数量
     totalNum = this.list.reduce((a,b)=>{
-      return a+b.count
+      if (this.selectedIds.includes(b.id)){
+        return a+b.count
+      }else {
+        return a
+      }
     },0)
     totalPrice = this.list.reduce((a,b)=>{
-      return a+b.count*b.good.jdPrice
+      if (this.selectedIds.includes(b.id)){
+        return a+b.count*b.good.jdPrice
+      }else {
+        return a
+      }
+
     },0)
     this.totalPrice=totalPrice
     this.totalNum=totalNum
@@ -39,7 +49,7 @@ export default struct Main {
       ContentCom({
         list:this.list,
         resetNums(){
-          this.sumHandler()
+          this.sumHandler
         }
       })
       // 支付
