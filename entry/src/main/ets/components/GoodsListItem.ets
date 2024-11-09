@@ -9,7 +9,8 @@ export default struct GoodsListItem {
     Row({ space: 10 }) {
       // 左
       Checkbox({
-        group: 'cart'
+        group: 'cart',
+        name:this.item.id
       })
         .shape(CheckBoxShape.CIRCLE)
         .selectedColor(MAIN_RED)

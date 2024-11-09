@@ -11,6 +11,9 @@ export default struct PayCom {
           group: 'cart'
         })
           .selectedColor(MAIN_RED)
+          .onChange((event)=>{
+            console.log('选中了'+JSON.stringify(event.name))
+          })
 
         Text('全选')
           .fontSize(12)
