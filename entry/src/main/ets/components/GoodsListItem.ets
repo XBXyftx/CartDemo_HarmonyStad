@@ -52,8 +52,15 @@ export default struct GoodsListItem {
             Counter() {
               Text('2')
             }
-
             .scale({ x: .8, y: .8 })
+            .onInc(()=>{
+              this.item.count++
+            })
+            .onDec(()=>{
+              if (this.item.count>1) {
+                this.item.count--
+              }
+            })
           }
           .justifyContent(FlexAlign.SpaceBetween)
           .width('100%')
