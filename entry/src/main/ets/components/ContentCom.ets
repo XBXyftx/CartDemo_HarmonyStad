@@ -18,6 +18,9 @@ export default struct ContentCom {
       .textAlign(TextAlign.Center)
       .width(100)
       .height('100%')
+      .onClick(()=>{
+        // this.list = []测试并证明Link的联动关系可以直接修改父组件的参数
+      })
   }
   @Link list:CartGood[]//第一层可以用link
   build() {
